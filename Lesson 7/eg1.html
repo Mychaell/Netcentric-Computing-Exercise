@@ -1,0 +1,30 @@
+<!DOCTYPE html html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional/EN" "http://www.w3.org/TR/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Fibonacci Series</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var fib1 = 0,
+        fib2 = 1,
+        fib = 0;
+      var num = prompt("Enter the number : \n", "");
+      if (num != null && num > 0) {
+        document.write(
+          "<h1>The first " + num + " number in the fibonacci series</h1>"
+        );
+        if (num == 1) document.write("<h2> " + fib1 + " </h2>");
+        else {
+          document.write("<h2> " + fib1 + " </h2>");
+          document.write("<h2> " + fib2 + " </h2>");
+        }
+        for (i = 3; i <= num; i++) {
+          fib = fib1 + fib2;
+          document.write("<h2> " + fib + " </h2>");
+          fib1 = fib2;
+          fib2 = fib;
+        }
+      } else alert("Invalid input");
+    </script>
+  </body>
+</html>

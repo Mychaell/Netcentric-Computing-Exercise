@@ -1,0 +1,115 @@
+<html>
+    <head><title>validating email in javascript</title>
+    <script>
+
+        function validate()
+        {
+        var y = document.forms["myform"]["email"].value;
+        if (y == null || y == "")
+        {
+            alert("fill up the NAME field");
+            return false;
+        }
+        var z = document.forms["myform"]["st_id"].value;
+        if (isNan(z))
+        {
+        alert("invalid, enter ID in number");
+        return false;
+        }
+        if (z == null || z == "")
+        {
+            alert("fill up the ID field");
+            return false;
+        }
+        var p = document.forms["myform"]["address"].value;
+        if (p == null || p == "")
+        {
+            alert("fill up the ADDRESS field");
+            return false;
+        }
+        var x = document.forms["myform"]["email"].value;
+        var atpos = x.indexOf("@");
+        var dotpos = x.indexOf(".");
+        if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
+        {
+            alert("invalid email");
+            return false;
+        }
+        var q = document.forms["myform"]["telephone"].value;
+        if (q == null || q == "")
+        {
+            alert("fill up the TELEPHONE field");
+            return false;
+        }
+        var r = document.forms["myform"]["faculty"].value;
+        if (r == "None")
+        {
+            alert("You must choose a COURSE in the list");
+            return false;
+        }
+        var n = document.forms["myform"]["batch"].value;
+        if (n == "None")
+        {
+            alert("You must choose a BATCH in the list");
+            return false;
+        }
+        }
+
+    </script>
+
+    <script>
+        function color(ID)
+        {
+            document.getElementById(ID).style.backgroundColor = "red";
+        }
+        function color1(ID)
+        {
+            document.getElementById(ID).style.backgroundColor = "white";
+        }
+    </script>
+    </head>
+
+    <body text="white" bgcolor="black">
+
+        <form name="myform" onsubmit="return validate()">
+            
+            <fieldset>
+
+                <legend><b>Student Regitration</b></legend>
+
+                Name &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="text" name="name" id="name" size="20" onfocus="color(this.id)" onblur="color1(this.id)">
+
+                <p>StudentID &nbsp <input type="text" name="st_id" id="st_id" size="20" onfocus="color(this.id)" onblur="color1(this.id)"></p>
+
+                <p>Email &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="text" name="email" id="email" size="20" onfocus="color(this.id)" onblur="color1(this.id)"></p>
+
+                <p>Telephone &nbsp&nbsp <input type="text" name="telephone" id="telephone" size="20" onfocus="color(this.id)" onblur="color1(this.id)"></p>
+
+                <option value="None">None</option>
+                <option>Computer Science</option>
+                <option>Biochemistry</option>
+                <option>Medicine</option>
+                <option>Pharmacy</option>
+                <option>Nursing</option>
+                </select>
+
+                <p>Batch &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <select name="batch" id="batch">
+                <option value="None">None</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>  
+                </select></p>
+
+                <p>
+                    <input type="submit" value="submit">
+                    <input type="reset" value="Reset">
+                    <input type="submit" value="Add">
+                </p>
+            </fieldset>
+
+        </form>
+        
+    </body>
+</html>

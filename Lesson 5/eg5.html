@@ -1,12 +1,15 @@
 <html>
-    <title> nested frames </title>
-    <frameset col="25%,* ">
-        <frameset src="one.htm">
+<title> nested frames </title>
+<frameset col="25%,* ">
+    <frameset src="one.htm">
         <frameset rows="100,150,100">
             <frame src="two.htm">
-            <frame src="tree.htm">
-        <frameset cols="*,*">
-            <frame src="four.htm">
-            <frame src="five.htm">
-    </frameset></frameset></frameset>
+                <frame src="tree.htm">
+                    <frameset cols="*,*">
+                        <frame src="four.htm">
+                            <frame src="five.htm">
+                    </frameset>
+        </frameset>
+    </frameset>
+
 </html>

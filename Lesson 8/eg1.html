@@ -1,45 +1,43 @@
 <html>
-  <body>
-    <script language="javascript">
-      function validRoll(theField) {
-        var nsize = theField.length;
-        var nval = theField.value;
-        var valid = true;
 
-        for (var i = 0; i < 7; i++);
-        {
-          var nxtchar = nval.substring(i, i + 1);
-          if (nxtchar < "0" || nxtchar > "9") {
-            valid = false;
-          }
+<body>
+  <script language="javascript">
+    function validRoll(theField) {
+      var nsize = theField.length;
+      var nval = theField.value;
+      var valid = true;
 
-          if (valid == false) {
-            alert("Invalid Roll Number:" + nval);
-          }
+      for (var i = 0; i < 7; i++);
+      {
+        var nxtchar = nval.substring(i, i + 1);
+        if (nxtchar < "0" || nxtchar > "9") {
+          valid = false;
+        }
+
+        if (valid == false) {
+          alert("Invalid Roll Number:" + nval);
         }
       }
-    </script>
+    }
+  </script>
 
-    <h3>Student Regitration Form</h3>
+  <h3>Student Regitration Form</h3>
 
-    <form method="post" action="/CGI/feedback">
-      <p>Name: <input name="name" type="text" size="30" maxlength="50" /></p>
+  <form method="post" action="/CGI/feedback">
+    <p>Name: <input name="name" type="text" size="30" maxlength="50" /></p>
 
-      <p>Roll Number: <input name="rollno" type="text" size="7" /></p>
+    <p>Roll Number: <input name="rollno" type="text" size="7" /></p>
 
-      <p>
-        Courses:
-        <input name="courseno1" type="text" size="6" />
-        <input name="courseno2" type="text" size="6" />
-        <input name="courseno3" type="text" size="6" />
-      </p>
-      <input
-        type="button"
-        value="submit"
-        onclick="validRoll(this.form.rollno)"
-      />
+    <p>
+      Courses:
+      <input name="courseno1" type="text" size="6" />
+      <input name="courseno2" type="text" size="6" />
+      <input name="courseno3" type="text" size="6" />
+    </p>
+    <input type="button" value="submit" onclick="validRoll(this.form.rollno)" />
 
-      <input type="reset" />
-    </form>
-  </body>
+    <input type="reset" />
+  </form>
+</body>
+
 </html>
